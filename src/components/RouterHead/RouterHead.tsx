@@ -27,6 +27,24 @@ export const RouterHead = component$(() => {
       {head.styles.map((s) => (
         <style key={s.key} {...s.props} dangerouslySetInnerHTML={s.style} />
       ))}
+      <script
+        dangerouslySetInnerHTML={`
+          (function() {
+            function setTheme(theme) {
+              document.documentElement.className = theme;
+              localStorage.setItem('theme', theme);
+            }
+            var theme = localStorage.getItem('theme');
+            theme = theme === 'light' ? 'light' : 'dark';
+            console.log('---', theme);
+            if (theme) {
+              setTheme(theme);
+            } else {
+              setTheme('light');
+            }
+          })();
+        `}
+      />
     </>
   );
 });

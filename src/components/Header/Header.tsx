@@ -1,58 +1,46 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik';
-import style from './Header.scss?inline';
-import { QwikIcon } from '../QwikIcon/QwikIcon';
-import { GitHubIcon } from '../GitHubIcon/GitHubIcon';
-import { ThemeSelector } from '~/ThemeSelector/ThemeSelector';
+import { component$ } from "@builder.io/qwik";
+import { ThemeSelector } from "~/ThemeSelector/ThemeSelector";
+import { config } from "../../../road-plan.config";
+import { GitHubIcon } from "../Icons/GitHubIcon";
+import { MenuIcon } from "../Icons/MenuIcon";
+import { QwikIcon } from "../Icons/QwikIcon";
 
 export const Header = component$(() => {
-	useStylesScoped$(style);
-	return (
-		<header class='class_1'>
-			<div class='class_2'>
-				<div class='class_3'>
-					<button class='class_6'>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							xmlns:xlink='http://www.w3.org/1999/xlink'
-							role='img'
-							class='icon'
-							style=''
-							width='1em'
-							height='1em'
-							viewBox='0 0 24 24'
-						>
-							<path
-								fill='none'
-								stroke='currentColor'
-								stroke-linecap='round'
-								stroke-linejoin='round'
-								stroke-width='2'
-								d='M4 6h16M4 12h16M4 18h16'
-							></path>
-						</svg>
-					</button>
-					<a href='/' class='class_6_1' aria-label='RoadPlan'>
-						<QwikIcon />
-					</a>
-				</div>
-				<div class='class_4'>
-					<div class='class_4_1'>
-						<QwikIcon />
-					</div>
-				</div>
-				<div class='class_5'>
-					<ThemeSelector />
-					<a
-						href='https://github.com/QwikDev/RoadPlan'
-						rel='noopener noreferrer'
-						target='_blank'
-						title='QwikDev/RoadPlan'
-						aria-label='QwikDev/RoadPlan'
-					>
-						<GitHubIcon />
-					</a>
-				</div>
-			</div>
-		</header>
-	);
+  return (
+    <header
+      class={{
+        "sticky top-0 z-10 h-[60px] border-b-[1px] border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900":
+          true,
+        "h-[66px] pt-2": config.loadingBar.enabled,
+      }}
+    >
+      <div class="grid h-full grid-cols-12 px-6">
+        <div class="col-span-4 flex items-center ">
+          <button class="block lg:hidden">
+            <MenuIcon />
+          </button>
+          <a href="/" class="hidden lg:block" aria-label="RoadPlan">
+            <QwikIcon />
+          </a>
+        </div>
+        <div class="col-span-4 flex items-center justify-center">
+          <div class="block lg:hidden">
+            <QwikIcon />
+          </div>
+        </div>
+        <div class="col-span-4 flex items-center justify-end pr-4">
+          <ThemeSelector />
+          <a
+            href="https://github.com/QwikDev/RoadPlan"
+            rel="noopener noreferrer"
+            target="_blank"
+            title="QwikDev/RoadPlan"
+            aria-label="QwikDev/RoadPlan"
+          >
+            <GitHubIcon />
+          </a>
+        </div>
+      </div>
+    </header>
+  );
 });
