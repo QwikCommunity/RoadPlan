@@ -26,6 +26,7 @@ lerna-debug.log*
 # Editor
 .vscode/*
 !.vscode/launch.json
+!.vscode/settings.json
 !.vscode/*.code-snippets
 
 .idea
