@@ -40,8 +40,12 @@ export default component$(() => {
     <div class="h-screen bg-white dark:bg-slate-900">
       {config.loadingBar.enabled && <LoadingBar />}
       <Header />
-      <main class="mt-4 min-h-[100%] bg-white dark:bg-slate-900">
-        <Slot />
+      <main class="lg:grid-cols-content mt-4 flex min-h-[100%] bg-white dark:bg-slate-900 lg:grid">
+        <aside class="hidden lg:block">aside</aside>
+        <article class="w-full">
+          <Slot />
+        </article>
+        <div class="hidden lg:block">content</div>
       </main>
       <Footer />
     </div>
