@@ -15,10 +15,10 @@ export const ThemeSelector = component$(() => {
         localStorage.setItem("theme", store.theme);
       }}
     >
-      <div class="light-icon">
+      <div class="light-element">
         <ThemeLightIcon />
       </div>
-      <div class="dark-icon">
+      <div class="dark-element">
         <ThemeDarkIcon />
       </div>
     </div>

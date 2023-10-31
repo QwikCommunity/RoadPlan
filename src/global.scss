@@ -27,19 +27,19 @@ body {
   height: 100%;
 }
 
-.light-icon {
+.light-element {
   display: none;
 }
-.dark-icon {
+.dark-element {
   display: none;
 }
 .light {
-  .light-icon {
+  .light-element {
     display: block;
   }
 }
 .dark {
-  .dark-icon {
+  .dark-element {
     display: block;
   }
 }

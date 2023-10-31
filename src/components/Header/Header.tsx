@@ -3,7 +3,6 @@ import { ThemeSelector } from "~/components/ThemeSelector/ThemeSelector";
 import { config } from "../../../road-plan.config";
 import { GitHubIcon } from "../Icons/GitHubIcon";
 import { MenuIcon } from "../Icons/MenuIcon";
-import { QwikIcon } from "../Icons/QwikIcon";
 
 export const Header = component$(() => {
   return (
@@ -19,13 +18,26 @@ export const Header = component$(() => {
           <button class="block lg:hidden">
             <MenuIcon />
           </button>
-          <a href="/" class="hidden lg:block" aria-label="RoadPlan">
-            <QwikIcon />
+          <a href="/" class="hidden items-center lg:flex" aria-label="RoadPlan">
+            <div class="light-element">
+              <img src="./logo-black.png" width={42} height={42} />
+            </div>
+            <div class="dark-element">
+              <img src="./logo-white.png" width={42} height={42} />
+            </div>
+            <span class="pl-4 text-xl font-bold text-slate-900 dark:text-white">
+              RoadPlan
+            </span>
           </a>
         </div>
         <div class="col-span-4 flex items-center justify-center">
           <div class="block lg:hidden">
-            <QwikIcon />
+            <div class="light-element">
+              <img src="./logo-black.png" width={42} height={42} />
+            </div>
+            <div class="dark-element">
+              <img src="./logo-white.png" width={42} height={42} />
+            </div>
           </div>
         </div>
         <div class="col-span-4 flex items-center justify-end pr-4">
