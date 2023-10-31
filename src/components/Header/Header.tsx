@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { ThemeSelector } from "~/ThemeSelector/ThemeSelector";
+import { ThemeSelector } from "~/components/ThemeSelector/ThemeSelector";
 import { config } from "../../../road-plan.config";
 import { GitHubIcon } from "../Icons/GitHubIcon";
 import { MenuIcon } from "../Icons/MenuIcon";

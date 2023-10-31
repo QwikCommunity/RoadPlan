@@ -7,7 +7,7 @@ export const GitHubIcon = component$(() => {
       xmlns:xlink="http://www.w3.org/1999/xlink"
       aria-hidden="true"
       role="img"
-      class="h-8 w-8 rounded-xl p-1 hover:bg-slate-600"
+      class="h-8 w-8 rounded-xl p-1"
       viewBox="0 0 496 512"
     >
       <path

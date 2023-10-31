@@ -5,7 +5,7 @@ export const MenuIcon = component$(() => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      class="h-8 w-8 rounded-xl p-1 hover:bg-gray-100 dark:hover:bg-slate-600"
+      class="h-8 w-8 rounded-xl p-1"
       viewBox="0 0 24 24"
     >
       <g fill="none">

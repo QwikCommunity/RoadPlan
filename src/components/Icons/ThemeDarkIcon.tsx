@@ -7,7 +7,7 @@ export const ThemeDarkIcon = component$(() => {
       xmlns:xlink="http://www.w3.org/1999/xlink"
       aria-hidden="true"
       role="img"
-      class="w- h-8 rounded-xl p-1 hover:bg-slate-600"
+      class="w- h-8 rounded-xl p-1"
       viewBox="0 0 24 24"
     >
       <path
