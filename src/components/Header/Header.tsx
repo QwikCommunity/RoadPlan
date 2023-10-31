@@ -30,7 +30,7 @@ export const Header = component$(() => {
 							></path>
 						</svg>
 					</button>
-					<a href='/' class='class_6_1' aria-label='Docus'>
+					<a href='/' class='class_6_1' aria-label='RoadPlan'>
 						<QwikIcon />
 					</a>
 				</div>
