@@ -1,9 +1,7 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { GitHubIcon } from "../Icons/GitHubIcon";
-import style from "./Footer.scss?inline";
 
 export const Footer = component$(() => {
-  useStylesScoped$(style);
   return (
     <footer class="flex border-t-[1px] border-slate-200 bg-white px-6 py-4 dark:border-slate-800  dark:bg-slate-900">
       <div class="grid w-full grid-cols-12">
