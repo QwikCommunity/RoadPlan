@@ -2,6 +2,7 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import style from './Header.scss?inline';
 import { QwikIcon } from '../QwikIcon/QwikIcon';
 import { GitHubIcon } from '../GitHubIcon/GitHubIcon';
+import { ThemeSelector } from '~/ThemeSelector/ThemeSelector';
 
 export const Header = component$(() => {
 	useStylesScoped$(style);
@@ -40,6 +41,7 @@ export const Header = component$(() => {
 					</div>
 				</div>
 				<div class='class_5'>
+					<ThemeSelector />
 					<a
 						href='https://github.com/QwikDev/RoadPlan'
 						rel='noopener noreferrer'
