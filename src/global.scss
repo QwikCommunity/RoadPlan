@@ -43,3 +43,103 @@ body {
     display: block;
   }
 }
+
+.docs {
+  @apply w-full p-8 text-black dark:text-white lg:px-16;
+
+  h1 {
+    @apply mt-2 scroll-m-20 text-4xl font-bold;
+  }
+
+  h2 {
+    @apply mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0;
+  }
+
+  h3 {
+    @apply mt-8 scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply mt-8 scroll-m-20 text-lg font-semibold tracking-tight;
+  }
+
+  h5 {
+    @apply mt-8 scroll-m-20 text-lg font-semibold tracking-tight;
+  }
+
+  h6 {
+    @apply mt-8 scroll-m-20 text-base font-semibold tracking-tight;
+  }
+
+  a {
+    @apply font-medium underline underline-offset-4;
+  }
+
+  p {
+    @apply leading-7;
+  }
+
+  p:not(:first-child) {
+    @apply mt-6;
+  }
+
+  ul {
+    @apply my-6 ml-6 list-disc;
+  }
+
+  ol {
+    @apply my-6 ml-6 list-decimal;
+  }
+
+  li {
+    @apply mt-2;
+  }
+
+  blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+  }
+
+  img {
+    @apply rounded-md;
+  }
+
+  hr {
+    @apply my-4 md:my-8;
+  }
+
+  table {
+    @apply my-6 w-full overflow-y-auto;
+  }
+
+  tr {
+    @apply m-0 border-t p-0;
+  }
+
+  th {
+    @apply border px-4 py-2 text-left font-bold;
+  }
+
+  th[align="center"] {
+    @apply text-center;
+  }
+
+  th[align="right"] {
+    @apply text-right;
+  }
+
+  td {
+    @apply border px-4 py-2 text-left;
+  }
+
+  td[align="center"] {
+    @apply text-center;
+  }
+
+  td[align="right"] {
+    @apply text-right;
+  }
+
+  pre {
+    @apply mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 p-6 text-white dark:bg-zinc-900;
+  }
+}

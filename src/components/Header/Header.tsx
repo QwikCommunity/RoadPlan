@@ -32,7 +32,7 @@ export const Header = component$(() => {
             <div class="dark-element h-[42px] w-[42px]">
               <LogoWhite />
             </div>
-            <span class="pl-4 text-xl font-bold text-slate-900 dark:text-white">
+            <span class="pl-4 text-xl font-bold text-black dark:text-white">
               RoadPlan
             </span>
           </a>

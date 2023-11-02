@@ -46,7 +46,7 @@ export default component$(() => {
         <aside class="hidden border-r-[2px] border-slate-200 dark:border-slate-800 lg:block">
           <Aside />
         </aside>
-        <article class="w-full">
+        <article class="docs w-full">
           <Slot />
         </article>
         <div class="hidden border-l-[2px] border-slate-200 dark:border-slate-800 lg:block">
