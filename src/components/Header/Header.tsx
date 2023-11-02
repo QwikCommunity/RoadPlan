@@ -1,21 +1,26 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 import { ThemeSelector } from "~/components/ThemeSelector/ThemeSelector";
 import { config } from "../../../road-plan.config";
+import { Aside } from "../Aside/Aside";
+import { CloseIcon } from "../Icons/CloseIcon";
 import { GitHubIcon } from "../Icons/GitHubIcon";
 import { MenuIcon } from "../Icons/MenuIcon";
 
 export const Header = component$(() => {
+  const showAsideSig = useSignal(false);
+  const spacialClasses = config.loadingBar.enabled
+    ? "h-[66px] pt-2"
+    : "h-[60px]";
   return (
     <header
-      class={{
-        "sticky top-0 z-10 h-[60px] border-b-[1px] border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900":
-          true,
-        "h-[66px] pt-2": config.loadingBar.enabled,
-      }}
+      class={`sticky top-0 z-10 ${spacialClasses} border-b-[1px] border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900`}
     >
       <div class="grid h-full grid-cols-12 px-6">
         <div class="col-span-4 flex items-center ">
-          <button class="block lg:hidden">
+          <button
+            class="block lg:hidden"
+            onClick$={() => (showAsideSig.value = true)}
+          >
             <MenuIcon />
           </button>
           <a href="/" class="hidden items-center lg:flex" aria-label="RoadPlan">
@@ -53,6 +58,23 @@ export const Header = component$(() => {
           </a>
         </div>
       </div>
+      {showAsideSig.value && (
+        <div class="fixed inset-0 z-20 overflow-hidden">
+          <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute inset-0 bg-gray-500 bg-opacity-75 opacity-100 transition-opacity"></div>
+            <div class="fixed inset-y-0 left-0 flex h-full w-screen max-w-md translate-x-0 flex-col overflow-y-scroll bg-white dark:bg-slate-900">
+              <div
+                class={`${spacialClasses} border-b-[1px] border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900`}
+              >
+                <div class="pl-5" onClick$={() => (showAsideSig.value = false)}>
+                  <CloseIcon />
+                </div>
+              </div>
+              <Aside />
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 });

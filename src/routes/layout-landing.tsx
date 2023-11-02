@@ -7,6 +7,7 @@ import {
   useVisibleTask$,
 } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
+import { Aside } from "~/components/Aside/Aside";
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
 import { LoadingBar } from "~/components/LoadingBar/LoadingBar";
@@ -40,12 +41,18 @@ export default component$(() => {
     <div class="h-screen bg-white dark:bg-slate-900">
       {config.loadingBar.enabled && <LoadingBar />}
       <Header />
-      <main class="lg:grid-cols-content mt-4 flex min-h-[100%] bg-white dark:bg-slate-900 lg:grid">
-        <aside class="hidden lg:block">aside</aside>
+      <main class="flex min-h-[100%] bg-white dark:bg-slate-900 lg:grid lg:grid-cols-content">
+        <aside class="hidden border-r-[1px] border-slate-200 dark:border-slate-800 lg:block">
+          <Aside />
+        </aside>
         <article class="w-full">
           <Slot />
         </article>
-        <div class="hidden lg:block">content</div>
+        <div class="hidden border-l-[1px] border-slate-200 dark:border-slate-800 lg:block">
+          <div class="m-auto mt-8 flex h-48 items-center justify-center text-xl text-slate-900 dark:text-white">
+            TOC
+          </div>
+        </div>
       </main>
       <Footer />
     </div>

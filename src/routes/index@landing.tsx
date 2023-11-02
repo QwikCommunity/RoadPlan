@@ -3,7 +3,7 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
-    <div class="flex flex-col gap-8 text-gray-950 dark:text-white">
+    <div class="mt-8 flex flex-col gap-8 text-gray-950 dark:text-white">
       <h1 class="text-center text-3xl font-bold leading-normal lg:text-5xl">
         <span class="text-qwikui-purple-400 dark:text-qwikui-purple-500 flex items-center justify-center font-[900] tracking-wide">
           <div class="light-element">
