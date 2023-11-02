@@ -36,7 +36,6 @@ export const RouterHead = component$(() => {
             }
             var theme = localStorage.getItem('theme');
             theme = theme === 'light' ? 'light' : 'dark';
-            console.log('---', theme);
             if (theme) {
               setTheme(theme);
             } else {
