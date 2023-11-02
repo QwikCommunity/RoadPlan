@@ -11,6 +11,7 @@ import { Aside } from "~/components/Aside/Aside";
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
 import { LoadingBar } from "~/components/LoadingBar/LoadingBar";
+import { Toc } from "~/components/Toc/Toc";
 import { config } from "../../road-plan.config";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
@@ -49,9 +50,7 @@ export default component$(() => {
           <Slot />
         </article>
         <div class="hidden border-l-[1px] border-slate-200 dark:border-slate-800 lg:block">
-          <div class="m-auto mt-8 flex h-48 items-center justify-center text-xl text-slate-900 dark:text-white">
-            TOC
-          </div>
+          <Toc />
         </div>
       </main>
       <Footer />
