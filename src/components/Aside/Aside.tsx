@@ -5,7 +5,9 @@ export const Aside = component$(() => {
   const { menu } = useContent();
 
   return (
-    <div class="flex flex-col px-6 pt-6 text-xl text-black dark:text-white">
+    <div
+      class={`fixed flex w-full flex-col px-6 pt-28 text-xl text-black dark:text-white`}
+    >
       {(menu?.items || []).map(({ text, items }, idx) => (
         <ul key={idx} class="mb-6">
           <li class="text-lg font-bold text-black dark:text-white">

@@ -4,7 +4,7 @@ import { useContent } from "@builder.io/qwik-city";
 export const Toc = component$(() => {
   const { headings } = useContent();
   return (
-    <div class="flex flex-col px-6 pt-6 text-xl text-black dark:text-white">
+    <div class="fixed flex w-full flex-col px-6 pt-28 text-xl text-black dark:text-white">
       <span class="pb-4 pl-4">On this page</span>
       {(headings || []).map(({ text, id }, idx) => (
         <ul

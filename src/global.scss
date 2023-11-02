@@ -45,7 +45,7 @@ body {
 }
 
 .docs {
-  @apply w-full p-8 text-black dark:text-white lg:px-16;
+  @apply w-full px-8 text-black dark:text-white lg:px-16;
 
   h1 {
     @apply mt-2 scroll-m-20 text-4xl font-bold;
