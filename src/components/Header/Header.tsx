@@ -25,10 +25,10 @@ export const Header = component$(() => {
           </button>
           <a href="/" class="hidden items-center lg:flex" aria-label="RoadPlan">
             <div class="light-element h-[42px] w-[42px]">
-              <LogoBlack alt="logo-black" />
+              <LogoBlack alt="logo-black" loading="eager" />
             </div>
             <div class="dark-element h-[42px] w-[42px]">
-              <LogoWhite alt="logo-white" />
+              <LogoWhite alt="logo-white" loading="eager" />
             </div>
             <span class="pl-4 text-xl font-bold text-black dark:text-white">
               RoadPlan
@@ -38,10 +38,10 @@ export const Header = component$(() => {
         <div class="col-span-3 flex items-center justify-center sm:col-span-4">
           <div class="block lg:hidden">
             <div class="light-element h-[42px] w-[42px]">
-              <LogoBlack alt="logo-black" />
+              <LogoBlack alt="logo-black" loading="eager" />
             </div>
             <div class="dark-element h-[42px] w-[42px]">
-              <LogoWhite alt="logo-white" />
+              <LogoWhite alt="logo-white" loading="eager" />
             </div>
           </div>
         </div>
