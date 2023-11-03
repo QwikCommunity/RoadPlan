@@ -4,8 +4,11 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      screens: {
+        xsm: "400px",
+      },
       gridTemplateColumns: {
-        content: "minmax(300px, 300px) minmax(320px, 1fr) minmax(400px,400px)",
+        content: "minmax(280px, 280px) minmax(320px, 1fr) minmax(350px,350px)",
       },
     },
   },
