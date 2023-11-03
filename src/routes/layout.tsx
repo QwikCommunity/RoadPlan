@@ -38,7 +38,6 @@ export default component$(() => {
   });
   return (
     <div class="h-screen bg-white dark:bg-slate-900">
-      {/* {config.loadingBar.enabled && <LoadingBar />} */}
       <Header />
       <main class="flex min-h-[100%] bg-white dark:bg-slate-900 lg:grid lg:grid-cols-content">
         <aside
