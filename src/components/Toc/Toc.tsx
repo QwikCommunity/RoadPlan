@@ -21,7 +21,7 @@ export const Toc = component$(() => {
             }
           }}
         >
-          <li class="text-sm hover:text-gray-500">
+          <li class="text-xs hover:text-gray-500">
             <a href={`#${id}`}>{text}</a>
           </li>
         </ul>

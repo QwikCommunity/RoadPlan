@@ -6,7 +6,7 @@ export const Aside = component$(() => {
 
   return (
     <div
-      class={`fixed flex flex-col px-6 pt-28 text-xl text-black dark:text-white`}
+      class={`fixed top-28 flex flex-col px-6 text-xl text-black dark:text-white`}
     >
       {(menu?.items || []).map(({ text, items }, idx) => (
         <ul key={idx} class="mb-6">
