@@ -2,12 +2,12 @@ import { component$, useSignal } from "@builder.io/qwik";
 import { ThemeSelector } from "~/components/ThemeSelector/ThemeSelector";
 import LogoBlack from "../../../public/logo-black.png?jsx";
 import LogoWhite from "../../../public/logo-white.png?jsx";
+import { config } from "../../../road-plan.config";
 import { Aside } from "../Aside/Aside";
 import { CloseIcon } from "../Icons/CloseIcon";
 import { GitHubIcon } from "../Icons/GitHubIcon";
 import { MenuIcon } from "../Icons/MenuIcon";
 import { VersionSelector } from "../VersionSelector/VersionSelector";
-import { config } from "../../../road-plan.config";
 
 export const Header = component$(() => {
   const showAsideSig = useSignal(false);
@@ -25,10 +25,10 @@ export const Header = component$(() => {
           </button>
           <a href="/" class="hidden items-center lg:flex" aria-label="RoadPlan">
             <div class="light-element h-[42px] w-[42px]">
-              <LogoBlack />
+              <LogoBlack alt="logo-black" />
             </div>
             <div class="dark-element h-[42px] w-[42px]">
-              <LogoWhite />
+              <LogoWhite alt="logo-white" />
             </div>
             <span class="pl-4 text-xl font-bold text-black dark:text-white">
               RoadPlan
@@ -38,10 +38,10 @@ export const Header = component$(() => {
         <div class="col-span-3 flex items-center justify-center sm:col-span-4">
           <div class="block lg:hidden">
             <div class="light-element h-[42px] w-[42px]">
-              <LogoBlack />
+              <LogoBlack alt="logo-black" />
             </div>
             <div class="dark-element h-[42px] w-[42px]">
-              <LogoWhite />
+              <LogoWhite alt="logo-white" />
             </div>
           </div>
         </div>

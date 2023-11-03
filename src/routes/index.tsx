@@ -9,10 +9,10 @@ export default component$(() => {
       <h1 class="text-center text-3xl font-bold leading-normal lg:text-5xl">
         <span class="text-qwikui-purple-400 dark:text-qwikui-purple-500 flex items-center justify-center font-[900] tracking-wide">
           <div class="light-element h-[200px] w-[200px]">
-            <LogoBlack />
+            <LogoBlack alt="logo-black" />
           </div>
           <div class="dark-element h-[200px] w-[200px]">
-            <LogoWhite />
+            <LogoWhite alt="logo-white" />
           </div>
         </span>
         <span class="text-qwikui-blue-500 dark:text-qwikui-blue-500  font-[900] tracking-wide">
