@@ -4,7 +4,7 @@ import { ChevronIcon } from "../Icons/ChevronIcon";
 
 const paths = import.meta.glob("/src/routes/docs/**/*");
 
-const versions = Object.keys(paths)
+let versions = Object.keys(paths)
   .filter((path) => path.indexOf("/src/routes/docs/") === 0)
   .map((path) => {
     path = path.replace("/src/routes/docs/", "");
@@ -12,7 +12,9 @@ const versions = Object.keys(paths)
     return folders[0];
   })
   .filter((path) => path.indexOf(".mdx") === -1)
-  .sort((a, b) => (a > b ? -1 : 1));
+  .sort((a, b) => (b === "latest" ? 1 : a > b ? -1 : 1));
+
+versions = [...new Set(versions)];
 
 export const VersionSelector = component$(() => {
   const location = useLocation();
@@ -33,7 +35,7 @@ export const VersionSelector = component$(() => {
           showSig.value = !showSig.value;
         }}
       >
-        {versionSig.value}
+        {versionSig.value || versions[0]}
         <ChevronIcon />
       </button>
       {showSig.value && (
