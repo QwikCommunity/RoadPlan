@@ -23,11 +23,7 @@ export const Header = component$(() => {
           >
             <MenuIcon />
           </button>
-          <a
-            href="/"
-            class="hidden items-center lg:flex"
-            aria-label="RoadPlan logo and title"
-          >
+          <a href="/" class="hidden items-center lg:flex">
             <div class="light-element h-[42px] w-[42px]">
               <LogoBlack alt="logo-black" loading="eager" />
             </div>
