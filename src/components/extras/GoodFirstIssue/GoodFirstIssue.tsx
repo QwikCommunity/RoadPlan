@@ -1,7 +1,6 @@
 import { component$, useSignal, useTask$ } from "@builder.io/qwik";
 import { Issue } from "./Issue";
 import { ProjectFilter } from "./ProjectFilter";
-import style from "./styles.module.css";
 
 type Props = { url: string };
 
@@ -90,7 +89,7 @@ export const GoodFirstIssue = component$<Props>(({ url }) => {
       <div>
         <div>
           <nav>
-            <p class={style.panelHeading}>Projects</p>
+            <p>Projects</p>
             {Object.values(projectsSig.value)
               .sort((a, b) => b.count - a.count)
               .map((project, key) => (
