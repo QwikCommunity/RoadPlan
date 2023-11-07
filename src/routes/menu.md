@@ -4,6 +4,8 @@
 
 - [Installation](/docs/installation/index.mdx)
 - [Theming](/docs/theming/index.mdx)
+- [Contribute](/docs/contribute/index.mdx)
+- [Benchmarks](/docs/benchmarks/index.mdx)
 
 ## API
 
