@@ -1,4 +1,4 @@
-import { component$, useSignal, useTask$ } from "@builder.io/qwik";
+import { $, component$, useSignal, useTask$ } from "@builder.io/qwik";
 import { Issue } from "./Issue";
 import { ProjectFilter } from "./ProjectFilter";
 
@@ -62,62 +62,49 @@ export const GoodFirstIssue = component$<Props>(({ url }) => {
     loadingSig.value = false;
   });
 
-  // const toggleProject = (name, selected) => {
-  //   if (projects[name]) {
-  //     projects[name].selected =
-  //       typeof selected === "undefined" ? !projects[name].selected : selected;
-  //   }
+  const toggleProject = $((name: string, selected: boolean) => {
+    // projectsSig.value = {
+    //   ...projectsSig.value,
+    //   [name]: { ...projectsSig.value[name], selected },
+    // };
+    projectsSig.value[name].selected = selected;
 
-  //   const filteredIssues = issues.filter((issue) => {
-  //     return projects[issue.project.name].selected;
-  //   });
-
-  //   setProjects(projects);
-  //   setFilteredIssues(filteredIssues);
-  // };
-
-  // function byCount(a, b) {
-  //   return b.count - a.count;
-  // }
+    filteredIssuesSig.value = issuesSig.value.filter((issue) => {
+      return projectsSig.value[issue.project.name].selected;
+    });
+  });
 
   return loadingSig.value ? (
-    <div role="alert">Loading...</div>
+    <div role="alert p-4">Loading...</div>
   ) : errorSig.value ? (
-    <div role="alert">Error: {errorSig.value}</div>
+    <div role="alert p-4">Error: {errorSig.value}</div>
   ) : (
-    <div>
-      <div>
-        <div>
-          <nav>
-            <p>Projects</p>
-            {Object.values(projectsSig.value)
-              .sort((a, b) => b.count - a.count)
-              .map((project, key) => (
-                <ProjectFilter
-                  key={key}
-                  name={project.name}
-                  count={project.count}
-                  selected={project.selected}
-                  toggle$={() => console.log("toggle$")}
-                />
-              ))}
-          </nav>
-        </div>
-        <div>
+    <div class="flex px-4 pt-8">
+      <div class="mr-4 w-[400px]">
+        <div class="py-2 text-3xl font-bold">Projects</div>
+        {Object.values(projectsSig.value)
+          .sort((a, b) => b.count - a.count)
+          .map((project, key) => (
+            <ProjectFilter
+              key={key}
+              name={project.name}
+              count={project.count}
+              toggle$={(selected) => {
+                toggleProject(project.name, selected);
+              }}
+            />
+          ))}
+      </div>
+      <div class="w-full">
+        {issuesSig.value.length === 0 ? (
           <div>
-            <>
-              {issuesSig.value.length === 0 ? (
-                <div>
-                  <strong>No issue available 😱</strong>
-                </div>
-              ) : (
-                filteredIssuesSig.value.map((issue, key) => (
-                  <Issue key={key} issue={issue} />
-                ))
-              )}
-            </>
+            <strong>No issue available 😱</strong>
           </div>
-        </div>
+        ) : (
+          filteredIssuesSig.value.map((issue, key) => (
+            <Issue key={key} issue={issue} />
+          ))
+        )}
       </div>
     </div>
   );
