@@ -12,7 +12,7 @@ type Props = {
 export const BenchmarkInfo = component$<Props>(
   ({ name, test: testFile, repository, req, progressValue }) => {
     return (
-      <div class="mx-2 my-6 p-4 shadow-xl">
+      <div class="mx-2 my-6 p-4 shadow-md">
         <div class="flex justify-between px-2 py-4 align-middle">
           <a
             class="text-2xl font-medium text-black hover:underline dark:text-white"
