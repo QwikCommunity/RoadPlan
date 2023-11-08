@@ -9,6 +9,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         content: "minmax(280px, 280px) minmax(320px, 1fr) minmax(350px,350px)",
+        "content-no-top": "minmax(280px, 280px) minmax(320px, 1fr)",
       },
     },
   },
