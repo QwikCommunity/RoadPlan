@@ -1,5 +1,29 @@
 import { component$ } from "@builder.io/qwik";
 import { GitHubIcon } from "~/components/Icons/GitHubIcon";
+import benchmarksData from "../../../generated/benchmarks.json";
+
+export const BenchmarkSection = component$(() => {
+  return (
+    <>
+      {benchmarksData.frameworks
+        .sort((a, b) =>
+          parseFloat(a.requests) > parseFloat(b.requests) ? -1 : 1,
+        )
+        .map((framework) => (
+          <BenchmarkInfo
+            key={framework.name}
+            name={framework.name}
+            req={parseFloat(framework.requests)}
+            progressValue={
+              (parseFloat(framework.requests) / benchmarksData.reference) * 100
+            }
+            test={framework.test}
+            repository={framework.repository}
+          />
+        ))}
+    </>
+  );
+});
 
 type Props = {
   name: string;
@@ -9,7 +33,7 @@ type Props = {
   progressValue: number;
 };
 
-export const BenchmarkInfo = component$<Props>(
+const BenchmarkInfo = component$<Props>(
   ({ name, test: testFile, repository, req, progressValue }) => {
     return (
       <div class="mx-2 my-6 p-4 shadow-md">
