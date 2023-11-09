@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { GitHubIcon } from "~/components/Icons/GitHubIcon";
 import benchmarksData from "../../../generated/benchmarks.json";
 
-export const BenchmarkSection = component$(() => {
+export const Benchmark = component$(() => {
   return (
     <>
       {benchmarksData.frameworks
