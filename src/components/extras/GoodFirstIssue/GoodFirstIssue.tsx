@@ -1,6 +1,5 @@
+import type { PropFunction } from "@builder.io/qwik";
 import { $, component$, useSignal, useTask$ } from "@builder.io/qwik";
-import { Issue } from "./Issue";
-import { ProjectFilter } from "./ProjectFilter";
 
 type Props = { url: string };
 
@@ -63,12 +62,7 @@ export const GoodFirstIssue = component$<Props>(({ url }) => {
   });
 
   const toggleProject = $((name: string, selected: boolean) => {
-    // projectsSig.value = {
-    //   ...projectsSig.value,
-    //   [name]: { ...projectsSig.value[name], selected },
-    // };
     projectsSig.value[name].selected = selected;
-
     filteredIssuesSig.value = issuesSig.value.filter((issue) => {
       return projectsSig.value[issue.project.name].selected;
     });
@@ -105,6 +99,76 @@ export const GoodFirstIssue = component$<Props>(({ url }) => {
             <Issue key={key} issue={issue} />
           ))
         )}
+      </div>
+    </div>
+  );
+});
+
+export type ProjectFilterProps = {
+  name: string;
+  count: number;
+  toggle$: PropFunction<(checked: boolean) => void>;
+};
+
+const ProjectFilter = component$<ProjectFilterProps>(
+  ({ name, count, toggle$ }) => {
+    const selectedSig = useSignal(true);
+    const onChange$ = $(() => {
+      selectedSig.value = !selectedSig.value;
+      toggle$(selectedSig.value);
+    });
+
+    return (
+      <div class="flex items-center py-2">
+        <input
+          type="checkbox"
+          checked={selectedSig.value}
+          onChange$={onChange$}
+          class="h-6 w-6 accent-green-500"
+        />
+        <div class="ml-4 flex flex-col">
+          <span class="text-base font-bold">{name}</span>
+          <span class="text-xs">{count} issues</span>
+        </div>
+      </div>
+    );
+  },
+);
+
+type IssueProps = {
+  issue: IssueType;
+};
+
+const Issue = component$<IssueProps>(({ issue }) => {
+  return (
+    <div
+      key={issue.url}
+      class="m-2 box-border flex flex-col overflow-hidden rounded-md p-4 pt-8 shadow-md"
+    >
+      <a target="_blank" href={issue.url}>
+        {issue.title}
+      </a>
+      <small>
+        Project&nbsp;
+        <a target="_blank" href={issue.project.url}>
+          {issue.project.name}
+        </a>
+      </small>
+      <div class="mt-2 flex flex-wrap justify-start gap-2">
+        {issue.labels.map((label) => {
+          return (
+            <div
+              key={label}
+              class={{
+                "mt-2 rounded-md bg-gray-300 p-1 text-xs": true,
+                "bg-red-300": label.toLowerCase() === "bug",
+                "bg-green-300": label.toLowerCase() === "help wanted",
+              }}
+            >
+              {label}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
