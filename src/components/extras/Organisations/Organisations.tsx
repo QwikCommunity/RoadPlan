@@ -1,3 +1,4 @@
+/* eslint-disable qwik/jsx-img */
 import { component$ } from "@builder.io/qwik";
 import organizationsData from "../../../generated/organisations.json";
 
@@ -26,8 +27,6 @@ const OrganizationItem = component$<{
         class="max-h-[60px] max-w-[160px] grayscale"
         src={`/images/organisations/${organization.image}`}
         alt={`${organization.name} is using Fastify`}
-        width={160}
-        height={80}
       />
     </a>
   );
