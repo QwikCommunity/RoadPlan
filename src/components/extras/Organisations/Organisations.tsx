@@ -7,7 +7,7 @@ type Props = {
 
 export const Organisations = component$<Props>(({ maxItems }) => {
   return (
-    <div class="mt-2 flex flex-wrap justify-between bg-gray-100 p-4">
+    <div class="mt-4 flex flex-wrap justify-between bg-gray-100 p-4">
       {shuffle(organizationsData, maxItems).map(
         (organization: (typeof organizationsData)[0], index: number) => (
           <OrganizationItem key={index} organization={organization} />

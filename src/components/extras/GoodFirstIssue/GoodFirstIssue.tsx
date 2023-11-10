@@ -124,7 +124,7 @@ const ProjectFilter = component$<ProjectFilterProps>(
           type="checkbox"
           checked={selectedSig.value}
           onChange$={onChange$}
-          class="h-6 w-6 accent-green-500"
+          class="h-6 w-6 text-black accent-green-500"
         />
         <div class="ml-4 flex flex-col">
           <span class="text-base font-bold">{name}</span>

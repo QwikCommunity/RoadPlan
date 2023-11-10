@@ -9,9 +9,9 @@ export const Footer = component$(() => {
         <div class="col-span-4" />
         <div class="col-span-4 flex justify-end">
           <a
+            target="_blank"
             href="https://github.com/QwikDev/RoadPlan"
             rel="noopener noreferrer"
-            target="_blank"
             title="QwikDev/RoadPlan"
             aria-label="QwikDev/RoadPlan"
           >

@@ -1,7 +1,6 @@
+/* eslint-disable qwik/jsx-img */
 import { component$, useSignal } from "@builder.io/qwik";
 import { ThemeSelector } from "~/components/ThemeSelector/ThemeSelector";
-import LogoBlack from "../../../public/logo-black.png?jsx";
-import LogoWhite from "../../../public/logo-white.png?jsx";
 import { config } from "../../../road-plan.config";
 import { Aside } from "../Aside/Aside";
 import { CloseIcon } from "../Icons/CloseIcon";
@@ -9,7 +8,11 @@ import { GitHubIcon } from "../Icons/GitHubIcon";
 import { MenuIcon } from "../Icons/MenuIcon";
 import { VersionSelector } from "../VersionSelector/VersionSelector";
 
-export const Header = component$(() => {
+type Props = {
+  links?: { name: string; href: string }[];
+  showMenu?: boolean;
+};
+export const Header = component$<Props>(({ links = [], showMenu = true }) => {
   const showAsideSig = useSignal(false);
   return (
     <header
@@ -17,44 +20,74 @@ export const Header = component$(() => {
     >
       <div class="grid h-full grid-cols-12 px-6">
         <div class="col-span-3 flex items-center sm:col-span-4">
-          <button
-            class="block lg:hidden"
-            onClick$={() => (showAsideSig.value = true)}
-          >
-            <MenuIcon />
-          </button>
-          <a href="/" class="hidden items-center lg:flex">
-            <div class="light-element h-[42px] w-[42px]">
-              <LogoBlack alt="logo-black" loading="eager" />
+          {showMenu && (
+            <button
+              class="block lg:hidden"
+              onClick$={() => (showAsideSig.value = true)}
+            >
+              <MenuIcon />
+            </button>
+          )}
+          <a href="/" class="hidden items-center pt-2 lg:flex">
+            <div class="light-element">
+              <img
+                src="/images/logos/fastify-black.svg"
+                width={130}
+                height={40}
+                alt="logo-black"
+                loading="eager"
+              />
             </div>
-            <div class="dark-element h-[42px] w-[42px]">
-              <LogoWhite alt="logo-white" loading="eager" />
+            <div class="dark-element">
+              <img
+                src="/images/logos/fastify-white.svg"
+                width={130}
+                height={40}
+                alt="logo-black"
+                loading="eager"
+              />
             </div>
-            <span class="pl-4 text-xl font-bold text-black dark:text-white">
-              RoadPlan
-            </span>
           </a>
         </div>
-        <div class="col-span-3 flex items-center justify-center sm:col-span-4">
-          <div class="block lg:hidden">
-            <div class="light-element h-[42px] w-[42px]">
-              <LogoBlack alt="logo-black" loading="eager" />
+        <div class="col-span-3 flex items-center justify-center pt-2 sm:col-span-4">
+          <a href="/" class="block lg:hidden">
+            <div class="light-element">
+              <img
+                src="/images/logos/fastify-black.svg"
+                width={130}
+                height={40}
+                alt="logo-black"
+                loading="eager"
+              />
             </div>
-            <div class="dark-element h-[42px] w-[42px]">
-              <LogoWhite alt="logo-white" loading="eager" />
+            <div class="dark-element">
+              <img
+                src="/images/logos/fastify-white.svg"
+                width={130}
+                height={40}
+                alt="logo-black"
+                loading="eager"
+              />
             </div>
+          </a>
+          <div class="hidden text-black dark:text-white lg:flex">
+            {links.map(({ name, href }, key) => (
+              <a key={key} class="m-4" href={href}>
+                {name}
+              </a>
+            ))}
           </div>
         </div>
         <div class="col-span-6 flex items-center justify-end sm:col-span-4">
           {config.versionSelector && <VersionSelector />}
           <ThemeSelector />
           <a
-            href="https://github.com/QwikDev/RoadPlan"
-            rel="noopener noreferrer"
             target="_blank"
+            href="https://github.com/QwikDev/RoadPlan"
             title="QwikDev/RoadPlan"
             aria-label="QwikDev/RoadPlan"
             class="hidden xsm:block"
+            rel="noopener noreferrer"
           >
             <GitHubIcon />
           </a>

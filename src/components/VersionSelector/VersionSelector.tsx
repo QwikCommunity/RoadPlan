@@ -2,12 +2,12 @@ import { component$, useComputed$, useSignal } from "@builder.io/qwik";
 import { useLocation, useNavigate } from "@builder.io/qwik-city";
 import { ChevronIcon } from "../Icons/ChevronIcon";
 
-const paths = import.meta.glob("/src/routes/docs/**/*");
+const paths = import.meta.glob("/src/routes/versions/**/*");
 
 let versions = Object.keys(paths)
-  .filter((path) => path.indexOf("/src/routes/docs/") === 0)
+  .filter((path) => path.indexOf("/src/routes/versions/") === 0)
   .map((path) => {
-    path = path.replace("/src/routes/docs/", "");
+    path = path.replace("/src/routes/versions/", "");
     const folders = path.split("/");
     return folders[0];
   })
@@ -19,7 +19,7 @@ versions = [...new Set(versions)];
 export const VersionSelector = component$(() => {
   const location = useLocation();
   const versionSig = useComputed$(
-    () => location.url.pathname.replace("/docs/", "").split("/")[0],
+    () => location.url.pathname.replace("/versions/", "").split("/")[0],
   );
   const navigate = useNavigate();
   const showSig = useSignal(false);
@@ -60,9 +60,9 @@ export const VersionSelector = component$(() => {
                 onClick$={() => {
                   showSig.value = !showSig.value;
                   if (version.indexOf("latest") > 0) {
-                    navigate(`/docs/latest/`);
+                    navigate(`/versions/latest/Guide/Benchmarking`);
                   } else {
-                    navigate(`/docs/${version}/`);
+                    navigate(`/versions/${version}/Guides/Benchmarking/`);
                   }
                 }}
               >
