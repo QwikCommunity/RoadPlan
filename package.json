@@ -25,15 +25,15 @@
     "qwik": "qwik"
   },
   "devDependencies": {
-    "@builder.io/qwik": "^1.2.15",
-    "@builder.io/qwik-city": "^1.2.15",
+    "@builder.io/qwik": "1.2.13",
+    "@builder.io/qwik-city": "1.2.13",
     "@types/eslint": "^8.44.4",
     "@types/node": "^20.8.4",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.51.0",
-    "eslint-plugin-qwik": "^1.2.15",
+    "eslint-plugin-qwik": "1.2.13",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
