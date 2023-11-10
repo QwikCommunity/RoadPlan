@@ -15,7 +15,7 @@ export const HomepageHeader = component$(() => {
       <div class="light-element">
         <img
           alt={config.title}
-          src={`/images/logos/fastify-black.svg`}
+          src={`/images/logos/fastify-black.webp`}
           width={320}
           height={100}
         />
@@ -23,7 +23,7 @@ export const HomepageHeader = component$(() => {
       <div class="dark-element">
         <img
           alt={config.title}
-          src={`/images/logos/fastify-white.svg`}
+          src={`/images/logos/fastify-white.webp`}
           width={320}
           height={100}
         />

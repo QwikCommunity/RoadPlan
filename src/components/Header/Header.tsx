@@ -31,7 +31,7 @@ export const Header = component$<Props>(({ links = [], showMenu = true }) => {
           <a href="/" class="hidden items-center pt-2 lg:flex">
             <div class="light-element">
               <img
-                src="/images/logos/fastify-black.svg"
+                src="/images/logos/fastify-black.webp"
                 width={130}
                 height={40}
                 alt="logo-black"
@@ -40,7 +40,7 @@ export const Header = component$<Props>(({ links = [], showMenu = true }) => {
             </div>
             <div class="dark-element">
               <img
-                src="/images/logos/fastify-white.svg"
+                src="/images/logos/fastify-white.webp"
                 width={130}
                 height={40}
                 alt="logo-black"
@@ -53,7 +53,7 @@ export const Header = component$<Props>(({ links = [], showMenu = true }) => {
           <a href="/" class="block lg:hidden">
             <div class="light-element">
               <img
-                src="/images/logos/fastify-black.svg"
+                src="/images/logos/fastify-black.webp"
                 width={130}
                 height={40}
                 alt="logo-black"
@@ -62,7 +62,7 @@ export const Header = component$<Props>(({ links = [], showMenu = true }) => {
             </div>
             <div class="dark-element">
               <img
-                src="/images/logos/fastify-white.svg"
+                src="/images/logos/fastify-white.webp"
                 width={130}
                 height={40}
                 alt="logo-black"
