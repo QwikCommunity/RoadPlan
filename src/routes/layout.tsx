@@ -1,7 +1,7 @@
 import {
+  Slot,
   component$,
   createContextId,
-  Slot,
   useContextProvider,
   useStore,
   useVisibleTask$,
@@ -11,6 +11,8 @@ import { Aside } from "~/components/Aside/Aside";
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
 import { Toc } from "~/components/Toc/Toc";
+import { components } from "~/components/mdx-components";
+import { MDXProvider } from "~/state/MDXProvider";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -45,9 +47,11 @@ export default component$(() => {
         >
           <Aside />
         </aside>
-        <article class="docs w-full pb-10 pt-28">
-          <Slot />
-        </article>
+        <MDXProvider components={components}>
+          <article class="docs w-full pb-10 pt-28">
+            <Slot />
+          </article>
+        </MDXProvider>
         <div
           class={`hidden border-l-[2px] border-slate-200 dark:border-slate-800 lg:block`}
         >
