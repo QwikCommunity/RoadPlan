@@ -39,26 +39,26 @@ export default component$(() => {
     store.theme = theme;
   });
   return (
-    <div class="h-screen bg-white dark:bg-slate-900">
-      <Header />
-      <main class="flex min-h-[100%] bg-white dark:bg-slate-900 lg:grid lg:grid-cols-content">
-        <aside
-          class={`hidden border-r-[2px] border-slate-200 dark:border-slate-800 lg:block`}
-        >
-          <Aside />
-        </aside>
-        <MDXProvider components={components}>
+    <MDXProvider components={components}>
+      <div class="h-screen bg-white dark:bg-slate-900">
+        <Header />
+        <main class="flex min-h-[100%] bg-white dark:bg-slate-900 lg:grid lg:grid-cols-content">
+          <aside
+            class={`hidden border-r-[2px] border-slate-200 dark:border-slate-800 lg:block`}
+          >
+            <Aside />
+          </aside>
           <article class="docs w-full pb-10 pt-28">
             <Slot />
           </article>
-        </MDXProvider>
-        <div
-          class={`hidden border-l-[2px] border-slate-200 dark:border-slate-800 lg:block`}
-        >
-          <Toc />
-        </div>
-      </main>
-      <Footer />
-    </div>
+          <div
+            class={`hidden border-l-[2px] border-slate-200 dark:border-slate-800 lg:block`}
+          >
+            <Toc />
+          </div>
+        </main>
+        <Footer />
+      </div>
+    </MDXProvider>
   );
 });

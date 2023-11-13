@@ -1,6 +1,10 @@
 import type { QwikIntrinsicElements } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
 import { Example } from "../example";
+import { Benchmark } from "../extras/Benchmark/Benchmark";
+import { GoodFirstIssue } from "../extras/GoodFirstIssue/GoodFirstIssue";
+import { HeroBanner } from "../extras/HeroBanner/HeroBanner";
+import { Organisations } from "../extras/Organisations/Organisations";
 
 export const components: Record<string, any> = {
   pre: component$<
@@ -31,4 +35,8 @@ export const components: Record<string, any> = {
     );
   }),
   Example: Example,
+  HeroBanner,
+  Benchmark,
+  GoodFirstIssue,
+  Organisations,
 };
