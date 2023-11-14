@@ -416,7 +416,7 @@ const nodeExternals = require("webpack-node-externals");
 const dotenv = require("dotenv-safe");
 const webpack = require("webpack");
 
-const env = process.env.NODE_ENV || "production";
+const env = NODE_ENV || "production";
 const dev = env === "development";
 
 if (dev) {

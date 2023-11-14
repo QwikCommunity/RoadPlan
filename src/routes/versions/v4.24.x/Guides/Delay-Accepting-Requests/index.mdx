@@ -457,7 +457,7 @@ Let's see how that behaves in action. If we fired our server up with `node
 index.js` and made a few requests to test things out. These were the logs we'd
 see (some bloat was removed to ease things up):
 
-<!-- markdownlint-disable -->
+{/* markdownlint-disable*/}
 
 ```sh
 {"time":1650063793316,"msg":"Doing magic!"}
@@ -473,7 +473,7 @@ see (some bloat was removed to ease things up):
 {"time":1650063800561,"reqId":"req-4","res":{"statusCode":200},"responseTime":702.4662979990244,"msg":"request completed"}
 ```
 
-<!-- markdownlint-enable -->
+{/* markdownlint-enable*/}
 
 Let's focus on a few parts:
 
@@ -488,7 +488,7 @@ couldn't do that before the server was ready to receive connections).
 
 While the server is still not ready, a few requests are attempted:
 
-<!-- markdownlint-disable -->
+{/* markdownlint-disable*/}
 
 ```sh
 {"time":1650063795030,"reqId":"req-1","req":{"method":"GET","url":"/v1","hostname":"localhost:1234","remoteAddress":"127.0.0.1","remotePort":51928},"msg":"incoming request"}
@@ -497,7 +497,7 @@ While the server is still not ready, a few requests are attempted:
 {"time":1650063796248,"reqId":"req-2","res":{"statusCode":200},"responseTime":0.4802369996905327,"msg":"request completed"}
 ```
 
-<!-- markdownlint-enable -->
+{/* markdownlint-enable*/}
 
 The first one (`req-1`) was a `GET /v1`, that failed (**FAST** - `responseTime`
 is in `ms`) with our `503` status code and the meaningful information in the
@@ -543,7 +543,7 @@ Keep-Alive: timeout=5
 
 After that there were more interesting log messages:
 
-<!-- markdownlint-disable -->
+{/* markdownlint-disable*/}
 
 ```sh
 {"time":1650063798377,"reqId":"req-3","req":{"method":"POST","url":"/webhook","hostname":"localhost:1234","remoteAddress":"127.0.0.1","remotePort":51932},"msg":"incoming request"}
@@ -551,21 +551,21 @@ After that there were more interesting log messages:
 {"time":1650063798379,"reqId":"req-3","res":{"statusCode":200},"responseTime":1.3567829988896847,"msg":"request completed"}
 ```
 
-<!-- markdownlint-enable -->
+{/* markdownlint-enable*/}
 
 This time it was our simulated external provider hitting us to let us know
 authentication had gone well and telling us what our `magicKey` was. We saved
 that into our `magicKey` decorator and celebrated with a log message saying we
 were now ready for customers to hit us!
 
-<!-- markdownlint-disable -->
+{/* markdownlint-disable*/}
 
 ```sh
 {"time":1650063799858,"reqId":"req-4","req":{"method":"GET","url":"/v1","hostname":"localhost:1234","remoteAddress":"127.0.0.1","remotePort":51934},"msg":"incoming request"}
 {"time":1650063800561,"reqId":"req-4","res":{"statusCode":200},"responseTime":702.4662979990244,"msg":"request completed"}
 ```
 
-<!-- markdownlint-enable -->
+{/* markdownlint-enable*/}
 
 Finally, a final `GET /v1` request was made and, this time, it succeeded. Its
 response was the following:

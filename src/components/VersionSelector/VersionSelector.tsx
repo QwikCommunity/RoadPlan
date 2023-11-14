@@ -2,7 +2,7 @@ import { component$, useComputed$, useSignal } from "@builder.io/qwik";
 import { useLocation, useNavigate } from "@builder.io/qwik-city";
 import { ChevronIcon } from "../Icons/ChevronIcon";
 
-const paths = import.meta.glob("/src/routes/versions/**/*");
+const paths = import.meta.glob("/src/routes/versions/**/*", { eager: true });
 
 let versions = Object.keys(paths)
   .filter((path) => path.indexOf("/src/routes/versions/") === 0)

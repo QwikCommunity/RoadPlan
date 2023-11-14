@@ -454,7 +454,7 @@ invalid as a result, as they will be treated as catch-alls.
 const AjvJTD = require('ajv/dist/jtd'/* only valid for AJV v7+ */)
 const ajv = new AjvJTD({
   // This would let you throw at start for invalid JTD schema objects
-  allErrors: process.env.NODE_ENV === 'development'
+  allErrors: NODE_ENV === 'development'
 })
 const fastify = Fastify({ jsonShorthand: false })
 fastify.setValidatorCompiler(({ schema }) => {

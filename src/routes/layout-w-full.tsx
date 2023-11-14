@@ -9,6 +9,8 @@ import {
 import { type RequestHandler } from "@builder.io/qwik-city";
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
+import { components } from "~/components/MdxComponents/MdxComponents";
+import { MDXProvider } from "~/state/MDXProvider";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -39,17 +41,20 @@ export default component$(() => {
     { name: "Contribute", href: "/Contribute/" },
     { name: "Benchmarks", href: "/Benchmarks/" },
     { name: "Adopters", href: "/Organisations/" },
+    { name: "Demo", href: "/demo/" },
   ];
 
   return (
-    <div class="h-screen bg-white dark:bg-slate-900">
-      <Header links={links} showMenu={false} />
-      <main class="flex min-h-[100%] bg-white dark:bg-slate-900">
-        <article class="docs w-full pb-10 pt-28">
-          <Slot />
-        </article>
-      </main>
-      <Footer />
-    </div>
+    <MDXProvider components={components}>
+      <div class="h-screen bg-white dark:bg-slate-900">
+        <Header links={links} showMenu={false} />
+        <main class="flex min-h-[100%] bg-white dark:bg-slate-900">
+          <article class="docs w-full pb-10 pt-28">
+            <Slot />
+          </article>
+        </main>
+        <Footer />
+      </div>
+    </MDXProvider>
   );
 });
