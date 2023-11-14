@@ -2,6 +2,7 @@ import type { Component, QwikIntrinsicElements } from "@builder.io/qwik";
 import { component$, useSignal, useTask$ } from "@builder.io/qwik";
 import { isDev } from "@builder.io/qwik/build";
 import { getHighlighter } from "shiki";
+import { CopyButton } from "../copy-button";
 
 const components: any = import.meta.glob("/src/examples/*", {
   import: "default",
@@ -48,7 +49,11 @@ export const Example = component$<ExampleProps>(({ name }) => {
   });
   return (
     <>
-      <div class="mb-4 mt-6 max-h-[650px] w-full overflow-x-auto rounded-lg border bg-zinc-950 p-6 text-white dark:bg-zinc-900">
+      <div class="relative mb-4 mt-6 max-h-[650px] w-full overflow-x-auto rounded-lg border bg-zinc-950 p-6 text-white dark:bg-zinc-900">
+        <CopyButton
+          class="absolute right-4 top-4 rounded p-1 text-white hover:bg-zinc-900"
+          value={componentRaw.value || ""}
+        />
         <div dangerouslySetInnerHTML={highlighterSignal.value} />
       </div>
       <div class="flex h-48 flex-col items-center justify-center border">

@@ -7,7 +7,7 @@ export const ThemeSelector = component$(() => {
   const store = useContext(StoreContext);
   return (
     <div
-      class="xsm:block hidden px-4"
+      class="hidden cursor-pointer px-4 xsm:block"
       onClick$={() => {
         store.theme = store.theme === "light" ? "dark" : "light";
         const newTheme = store.theme === "light" ? "light" : "dark";

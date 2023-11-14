@@ -32,7 +32,7 @@ export const components: Record<string, any> = {
       </code>
     );
   }),
-  Example: Example,
+  Example,
   HeroBanner,
   Benchmark,
   GoodFirstIssue,
