@@ -1,8 +1,8 @@
 {
   "css.lint.unknownAtRules": "ignore",
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true,
-    "source.fixAll": true
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
   },
   "editor.formatOnSave": true,  
 }

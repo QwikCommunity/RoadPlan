@@ -1,7 +1,7 @@
 import type { QwikIntrinsicElements } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
-import { CopyButton } from "../copy-button";
-import { Example } from "../example";
+import { CopyButton } from "../CopyButton/CopyButton";
+import { Example } from "../Example/Example";
 import { Benchmark } from "../extras/Benchmark/Benchmark";
 import { GoodFirstIssue } from "../extras/GoodFirstIssue/GoodFirstIssue";
 import { HeroBanner } from "../extras/HeroBanner/HeroBanner";

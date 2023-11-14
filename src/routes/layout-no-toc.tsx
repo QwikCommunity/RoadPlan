@@ -10,7 +10,7 @@ import { type RequestHandler } from "@builder.io/qwik-city";
 import { Aside } from "~/components/Aside/Aside";
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
-import { components } from "~/components/mdx-components";
+import { components } from "~/components/MdxComponents/MdxComponents";
 import { MDXProvider } from "~/state/MDXProvider";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {

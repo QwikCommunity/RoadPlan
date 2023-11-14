@@ -2,7 +2,7 @@ import type { Component, QwikIntrinsicElements } from "@builder.io/qwik";
 import { component$, useSignal, useTask$ } from "@builder.io/qwik";
 import { isDev } from "@builder.io/qwik/build";
 import { getHighlighter } from "shiki";
-import { CopyButton } from "../copy-button";
+import { CopyButton } from "../CopyButton/CopyButton";
 
 const components: any = import.meta.glob("/src/examples/*", {
   import: "default",
