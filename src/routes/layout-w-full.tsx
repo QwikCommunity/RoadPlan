@@ -41,6 +41,7 @@ export default component$(() => {
     { name: "Contribute", href: "/Contribute/" },
     { name: "Benchmarks", href: "/Benchmarks/" },
     { name: "Adopters", href: "/Organisations/" },
+    { name: "Demo", href: "/demo/" },
   ];
 
   return (

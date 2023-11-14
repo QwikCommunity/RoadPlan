@@ -12,7 +12,7 @@ export default extendConfig(baseConfig, () => {
     },
     plugins: [
       staticAdapter({
-        origin: "https://roadplan.pages.dev/",
+        origin: "https://road-plan-maiieul.vercel.app/",
       }),
     ],
   };
