@@ -1,6 +1,6 @@
 {
   "name": "roadplan",
-  "description": "RoadPlan",
+  "description": "Amazing and performant starter for documentation websites powered by Qwik",
   "engines": {
     "node": ">=20.9.0"
   },

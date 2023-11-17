@@ -1,6 +1,6 @@
 {
-  "name": "my-qwik-empty-starter",
-  "description": "App with Routing built-in ready to create your app",
+  "name": "roadplan-starter",
+  "description": "Amazing and performant starter for documentation websites powered by Qwik",
   "engines": {
     "node": ">=15.0.0"
   },
