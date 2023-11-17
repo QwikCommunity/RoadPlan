@@ -1,7 +1,7 @@
 /* eslint-disable qwik/jsx-img */
 import { component$, useSignal } from "@builder.io/qwik";
 import { ThemeSelector } from "~/components/ThemeSelector/ThemeSelector";
-import { config } from "../../../road-plan.config";
+import { config } from "../../../roadplan.config";
 import { Aside } from "../Aside/Aside";
 import { CloseIcon } from "../Icons/CloseIcon";
 import { GitHubIcon } from "../Icons/GitHubIcon";

@@ -1,7 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { ForkIcon } from "~/components/Icons/ForkIcon";
 import { StarIcon } from "~/components/Icons/StarIcon";
-import { config } from "../../../../road-plan.config";
+import { config } from "../../../../roadplan.config";
 
 export const HomepageHeader = component$(() => {
   const gitHubStats = useSignal<{ stargazers_count: number }>();
