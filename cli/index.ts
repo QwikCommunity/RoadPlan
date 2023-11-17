@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 import { cancel, intro, isCancel, log, outro, select, text } from "@clack/prompts";
 import { exec, spawn } from "child_process";
 import { cpSync, existsSync, mkdirSync } from "fs";

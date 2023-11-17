@@ -1,11 +1,12 @@
 {
-  "name": "roadplan",
+  "name": "road-plan",
   "description": "Amazing and performant starter for documentation websites powered by Qwik",
   "engines": {
     "node": ">=20.9.0"
   },
   "type": "module",
   "private": true,
+  "bin": "./lib/index.js",
   "scripts": {
     "build.cli": "rimraf lib/ && tsc",
     "cli": "pnpm build.cli && node ./lib/index.js"
