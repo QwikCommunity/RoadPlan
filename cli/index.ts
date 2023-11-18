@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-import { cancel, intro, isCancel, log, outro, text } from "@clack/prompts";
+import { cancel, confirm, intro, isCancel, log, outro, text } from "@clack/prompts";
 import { exec, spawn } from "child_process";
 import { cpSync, existsSync, mkdirSync } from "fs";
 import { gray } from 'kleur/colors';
@@ -84,6 +84,16 @@ const createProject = async () => {
       mkdirSync(projectNameAnswer, { recursive: true });
     }
     cpSync(templatePath, projectNameAnswer, { recursive: true });
+
+    const runDepInstallAnswer = await confirm({
+      message: `Would you like to install ${packageManager} dependencies?`,
+      initialValue: true,
+    });
+
+    if (typeof runDepInstallAnswer === 'symbol' || !runDepInstallAnswer) {
+      outro("RoadPlan starter creation completed successfully!");
+      process.exit(0);
+    }
 
     log.step("Installing dependencies...");
     await installDependencies(packageManager, projectNameAnswer);
