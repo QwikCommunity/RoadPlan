@@ -1,7 +1,7 @@
 <p align="center">
 <br/>
-  <img width="300" src="./public/logo-white.png#gh-dark-mode-only" alt="Qwik documentation starter">
-  <img width="300" src="./public/logo-black.png#gh-light-mode-only" alt="Qwik documentation starter">
+  <img width="300" src="./docs/logo-white.png#gh-dark-mode-only" alt="Qwik documentation starter">
+  <img width="300" src="./docs/logo-black.png#gh-light-mode-only" alt="Qwik documentation starter">
   <br/>
   <br/>
 </p>
