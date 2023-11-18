@@ -1,21 +1,26 @@
 {
-  "name": "roadplan",
+  "name": "@qwikdev/roadplan",
+  "version": "0.0.0",
   "description": "Amazing and performant starter for documentation websites powered by Qwik",
   "engines": {
     "node": ">=20.9.0"
   },
   "type": "module",
-  "private": true,
   "bin": "./lib/index.js",
   "scripts": {
     "build.cli": "rimraf lib/ && tsc",
     "cli": "pnpm build.cli && node ./lib/index.js"
   },
   "devDependencies": {
-    "@clack/prompts": "^0.7.0",
     "@types/node": "^20.9.1",
-    "cross-spawn": "^7.0.3",
+    "@types/which-pm-runs": "^1.0.2",
     "rimraf": "^5.0.5",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "cross-spawn": "^7.0.3",
+    "kleur": "^4.1.5",
+    "which-pm-runs": "^1.1.0"
   }
 }
