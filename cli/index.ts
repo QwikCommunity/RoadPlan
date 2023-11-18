@@ -1,17 +1,19 @@
 #! /usr/bin/env node
 
-import { cancel, intro, isCancel, log, outro, select, text } from "@clack/prompts";
+import { cancel, intro, isCancel, log, outro, text } from "@clack/prompts";
 import { exec, spawn } from "child_process";
 import { cpSync, existsSync, mkdirSync } from "fs";
+import { gray } from 'kleur/colors';
 import path from "path";
 import { fileURLToPath } from "url";
+import detectPackageManager from 'which-pm-runs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export const isPackageManagerInstalled = (packageManager) => {
   return new Promise((resolve) => {
-    exec(`${packageManager} --version`, (error, stdout, stderr) => {
+    exec(`${packageManager} --version`, (error, _, stderr) => {
       if (error || stderr) {
         resolve(false);
       } else {
@@ -46,32 +48,18 @@ export const installDependencies = async (packageManager, appPath) => {
   });
 };
 
+export function getPackageManager() {
+  return detectPackageManager()?.name || 'npm';
+}
+
 const createProject = async () => {
-  const packageManager = await select({
-    message: "Choose your favourite package manager:",
-    options: [
-      { value: "npm", label: "npm" },
-      { value: "pnpm", label: "pnpm" },
-      { value: "bun", label: "bun" },
-      { value: "yarn", label: "yarn" },
-    ],
-  });
-
-  if (typeof packageManager === 'symbol') {
-    cancel("Operation canceled.");
-    return process.exit(0);
-  }
-
-  const packageManagerInstalled = await isPackageManagerInstalled(packageManager);
-
-  if (!packageManagerInstalled) {
-    cancel(`The package manager ${packageManager} is not installed on your machine`);
-    return process.exit(0);
-  }
+  const packageManager = getPackageManager();
 
   const defaultProjectName = "./roadplan-app";
   const projectNameAnswer = await text({
-    message: "Dove desideri creare il nuovo progetto?",
+    message: `Where would you like to create your new project? ${gray(
+      `(Use '.' or './' for current directory)`
+    )}`,
     placeholder: defaultProjectName,
     validate(value) {
       if (value.length === 0) return `Value is required!`;
@@ -88,30 +76,27 @@ const createProject = async () => {
     process.exit(0);
   }
 
-  const appPath = path.join(__dirname, projectNameAnswer);
   const templatePath = path.join(__dirname, "..", "template");
 
   try {
     log.step("Creating project directories and copying files...");
-    console.log('-------', appPath)
-    if (!existsSync(appPath)) {
-      console.log('---111---', appPath)
-      mkdirSync(appPath, { recursive: true });
+    if (!existsSync(projectNameAnswer)) {
+      mkdirSync(projectNameAnswer, { recursive: true });
     }
-    cpSync(templatePath, appPath, {recursive: true});
+    cpSync(templatePath, projectNameAnswer, { recursive: true });
 
     log.step("Installing dependencies...");
-    await installDependencies(packageManager, appPath);
+    await installDependencies(packageManager, projectNameAnswer);
 
-    outro("Project creation completed successfully!");
+    outro("RoadPlan starter creation completed successfully!");
   } catch (err) {
-    console.error("An error occurred during project creation:", err);
+    console.error("An error occurred during RoadPlan starter creation:", err);
     process.exit(1);
   }
 };
 
 async function main() {
-  intro("create-my-roadplan-app");
+  intro("RoadPlan starter creation");
   await createProject();
 }
 
