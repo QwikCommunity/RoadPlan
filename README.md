@@ -12,7 +12,12 @@
   <h3>Amazing and performant starter for documentation websites powered by <a href='https://github.com/BuilderIO/qwik'>Qwik</a></h3>
 </div>
 
+### RoadPlan CLI
+
+```shell
+npx @qwikdev/roadplan
+```
+
 <div align='center'>
-  <h3>RoadPlan CLI<h3 />
   <img src="./docs/cli.gif" alt="RoadPlan CLI"/>
 </div>
