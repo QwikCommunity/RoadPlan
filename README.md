@@ -11,9 +11,3 @@
 <div align='center'>
   <h3>Amazing and performant starter for documentation websites powered by <a href='https://github.com/BuilderIO/qwik'>Qwik</a></h3>
 </div>
-
-## Static Site Generator (Node.js)
-
-```shell
-pnpm build.server
-```
