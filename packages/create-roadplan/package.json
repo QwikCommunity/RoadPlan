@@ -1,7 +1,7 @@
 {
   "name": "create-roadplan",
   "description": "Amazing and performant starter for documentation websites powered by Qwik",
-  "version": "0.0.4",
+  "version": "0.0.0",
   "type": "module",
   "bin": {
     "create-roadplan": "./lib/index.js"
@@ -19,8 +19,5 @@
   },
   "engines": {
     "node": ">=20.9.0"
-  },
-  "publishConfig": {
-    "registry": "http://localhost:4873"
   }
 }
