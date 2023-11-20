@@ -4,12 +4,12 @@ import { isDev } from "@builder.io/qwik/build";
 import { getHighlighter } from "shiki";
 import { CopyButton } from "../CopyButton/CopyButton";
 
-const components: any = import.meta.glob("/src/examples/*", {
+const components: any = import.meta.glob(`/src/components/Showcases/*`, {
   import: "default",
   eager: isDev ? false : true,
 });
 
-const componentsRaw: any = import.meta.glob("/src/examples/*", {
+const componentsRaw: any = import.meta.glob(`/src/components/Showcases/*`, {
   as: "raw",
   eager: isDev ? false : true,
 });
@@ -26,7 +26,7 @@ export const Example = component$<ExampleProps>(({ name }) => {
   if (name.endsWith("ts")) lang = "";
   if (name.endsWith("css")) lang = "";
 
-  const snippetPath = `/src/examples/${name}.${lang}`;
+  const snippetPath = `/src/components/Showcases/${name}.${lang}`;
 
   const highlighterSignal = useSignal<string>();
   const Component = useSignal<Component<any>>();

@@ -1,7 +1,7 @@
 import type { QwikIntrinsicElements } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
 import { CopyButton } from "../CopyButton/CopyButton";
-import { Example } from "../Example/Example";
+import { Example } from "../Showcase/Showcase";
 
 export const components: Record<string, any> = {
   pre: component$<

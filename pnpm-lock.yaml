@@ -40,7 +40,7 @@ importers:
         specifier: ^5.2.2
         version: 5.2.2
 
-  packages/template:
+  packages/create-roadplan/template:
     devDependencies:
       '@builder.io/qwik':
         specifier: ^1.2.17
