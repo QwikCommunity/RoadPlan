@@ -8,7 +8,6 @@
   "type": "module",
   "bin": "./lib/index.js",
   "scripts": {
-    "build.cli.old": "rimraf lib/ && tsc",
     "build.cli": "rimraf packages/create-roadplan/lib/ && cd packages/create-roadplan/ && tsc",
     "cli": "pnpm build.cli && node ./lib/index.js"
   },
