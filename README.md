@@ -15,7 +15,10 @@
 ### RoadPlan CLI
 
 ```shell
-npx @qwikdev/roadplan
+pnpm create roadplan
+yarn create roadplan
+npm create roadplan
+bun create roadplan
 ```
 
 <div align='center'>

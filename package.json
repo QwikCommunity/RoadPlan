@@ -8,19 +8,11 @@
   "type": "module",
   "bin": "./lib/index.js",
   "scripts": {
-    "build.cli": "rimraf lib/ && tsc",
+    "build.cli": "rimraf packages/create-roadplan/lib/ && cd packages/create-roadplan/ && tsc",
     "cli": "pnpm build.cli && node ./lib/index.js"
   },
   "devDependencies": {
-    "@types/node": "^20.9.1",
-    "@types/which-pm-runs": "^1.0.2",
     "rimraf": "^5.0.5",
     "typescript": "^5.2.2"
-  },
-  "dependencies": {
-    "@clack/prompts": "^0.7.0",
-    "cross-spawn": "^7.0.3",
-    "kleur": "^4.1.5",
-    "which-pm-runs": "^1.1.0"
   }
 }

@@ -76,7 +76,7 @@ const createProject = async () => {
     process.exit(0);
   }
 
-  const templatePath = path.join(__dirname, "..", "template");
+  const templatePath = path.join(__dirname, "../", "template");
 
   try {
     log.step("Creating project directories and copying files...");
