@@ -9,7 +9,8 @@
   "bin": "./lib/index.js",
   "scripts": {
     "build.cli": "rimraf packages/create-roadplan/lib/ && cd packages/create-roadplan/ && tsc",
-    "cli": "pnpm build.cli && node ./lib/index.js"
+    "cli": "pnpm build.cli && node ./lib/index.js",
+    "template.dev": "cd packages/template && pnpm dev"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",
