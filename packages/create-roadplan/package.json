@@ -2,6 +2,23 @@
   "name": "@qwikdev/create-roadplan",
   "description": "Interactive CLI for create RoadPlan starter",
   "version": "0.0.0",
+  "author": "QwikDev",
+  "license": "MIT",
+  "homepage": "https://roadplan.pages.dev/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QwikDev/RoadPlan.git",
+    "directory": "packages/create-roadplan"
+  },
+  "bugs": "https://github.com/QwikDev/RoadPlan/issues",
+  "keywords": [
+    "qwik",
+    "docs",
+    "CLI",
+    "generator",
+    "starters",
+    "template"
+  ],
   "type": "module",
   "bin": {
     "create-roadplan": "./lib/index.js"
