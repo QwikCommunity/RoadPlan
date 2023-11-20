@@ -1,5 +1,5 @@
 {
-  "name": "create-roadplan",
+  "name": "@qwikdev/create-roadplan",
   "description": "Interactive CLI for create RoadPlan starter",
   "version": "0.0.0",
   "type": "module",

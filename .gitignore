@@ -40,5 +40,4 @@ lerna-debug.log*
 # Yarn
 .yarn/*
 !.yarn/releases
-src/routes/versions/v4.24.x/Guides/Write-Plugin/index.md
 .vercel
