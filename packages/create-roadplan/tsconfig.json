@@ -6,9 +6,14 @@
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "outDir": "lib",
-    "types": ["node"]
+    "types": ["node"],
   },
   "include": [
-    "cli/**/*.ts"
+    "./**/*.ts"
+  ],
+  "exlude": [
+    "node_modules",
+    "lib",
+    "template"
   ]
 }
