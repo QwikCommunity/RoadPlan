@@ -1,6 +1,6 @@
 {
   "name": "create-roadplan",
-  "description": "Amazing and performant starter for documentation websites powered by Qwik",
+  "description": "Interactive CLI for create RoadPlan starter",
   "version": "0.0.0",
   "type": "module",
   "bin": {
