@@ -11,7 +11,7 @@
   "include": [
     "./**/*.ts"
   ],
-  "exlude": [
+  "exclude": [
     "node_modules",
     "lib",
     "template"
