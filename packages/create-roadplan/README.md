@@ -1,6 +1,6 @@
 <p align="center">
 <br/>
-  <img width="300" src="./docs/logo-black.png" alt="Qwik documentation starter">
+  <img width="300" src="./docs/logo.png" alt="Qwik documentation starter">
   <br/>
   <br/>
 </p>
