@@ -146,22 +146,14 @@ const createProject = async () => {
       initialValue: true,
     });
 
-    if (typeof runDepInstallAnswer === 'symbol' || !runDepInstallAnswer) {
-      outro("RoadPlan starter creation completed successfully!");
-      process.exit(0);
-    }
-
     const gitInitAnswer = await confirm({
       message: `Initialize a new git repository?`,
       initialValue: true,
     });
 
-    log.step("Installing dependencies...");
-    await installDependencies(packageManager, projectNameAnswer);
-
-    const s = spinner();
-
     if (gitInitAnswer) {
+      const s = spinner();
+
       if (fs.existsSync(join(outDir, '.git'))) {
         log.info(`Git has already been initialized before. Skipping...`);
       } else {
@@ -183,6 +175,11 @@ const createProject = async () => {
           log.error(red(`Git failed to initialize. You can do this manually by running: git init`));
         }
       }
+    }
+
+    if (typeof runDepInstallAnswer !== 'symbol' && runDepInstallAnswer) {
+      log.step("Installing dependencies...");
+      await installDependencies(packageManager, projectNameAnswer);
     }
 
     outro("RoadPlan starter creation completed successfully!");
