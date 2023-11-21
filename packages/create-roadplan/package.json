@@ -11,6 +11,9 @@
     "directory": "packages/create-roadplan"
   },
   "bugs": "https://github.com/QwikDev/RoadPlan/issues",
+  "scripts": {
+    "prepare.publish": "rm -rf template && mkdir template && cp -Ra ../template . && tsc"
+  },
   "keywords": [
     "qwik",
     "docs",
