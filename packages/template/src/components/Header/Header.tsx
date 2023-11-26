@@ -47,7 +47,7 @@ export const Header = component$<Props>(({ links = [], showMenu = true }) => {
                 loading="eager"
               />
             </div>
-            <span class="ml-2 text-lg font-bold">{config.title}</span>
+            <span class="ml-2 text-lg font-bold dark:text-white">{config.title}</span>
           </a>
         </div>
         <div class="col-span-3 flex items-center justify-center pt-2 sm:col-span-4">
