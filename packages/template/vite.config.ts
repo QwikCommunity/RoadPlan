@@ -1,23 +1,13 @@
 import { qwikCity } from "@builder.io/qwik-city/vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
-import { getHighlighter, Highlighter } from "shiki";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { recmaProvideComponents } from "./recma-provide-components";
-
-let highlighter: Highlighter;
 
 export default defineConfig(async () => {
   const { default: rehypePrettyCode } = await import("rehype-pretty-code");
   const { visit } = await import("unist-util-visit");
 
-  async function getOrCreateHighlighter() {
-    if (highlighter) {
-      return highlighter;
-    }
-    highlighter = await getHighlighter({ theme: "css-variables" });
-    return highlighter;
-  }
   return {
     plugins: [
       qwikCity({
@@ -45,7 +35,6 @@ export default defineConfig(async () => {
             [
               rehypePrettyCode,
               {
-                getHighlighter: getOrCreateHighlighter,
                 onVisitLine(node: any) {
                   // Prevent lines from collapsing in `display: grid` mode, and allow empty
                   // lines to be copy/pasted
