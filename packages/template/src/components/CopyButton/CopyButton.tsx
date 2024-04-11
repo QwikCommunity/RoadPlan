@@ -4,14 +4,14 @@ import { CheckIcon } from "../Icons/CheckIcon";
 import { CopyIcon } from "../Icons/CopyIcon";
 
 type CopyButtonProps = QwikIntrinsicElements["button"] & {
-  value: string;
+  code: string;
   src?: string;
 };
 export async function copyToClipboardWithMeta(value: string) {
   navigator.clipboard.writeText(value);
 }
 
-const CopyButton = component$<CopyButtonProps>(({ value, ...props }) => {
+export const CopyButton = component$<CopyButtonProps>(({ code, ...props }) => {
   const hasCopied = useSignal(false);
 
   useTask$(({ track }) => {
@@ -29,7 +29,7 @@ const CopyButton = component$<CopyButtonProps>(({ value, ...props }) => {
       {...props}
       class="relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50"
       onClick$={() => {
-        copyToClipboardWithMeta(value);
+        copyToClipboardWithMeta(code);
         hasCopied.value = true;
       }}
     >
@@ -38,5 +38,3 @@ const CopyButton = component$<CopyButtonProps>(({ value, ...props }) => {
     </button>
   );
 });
-
-export { CopyButton };
