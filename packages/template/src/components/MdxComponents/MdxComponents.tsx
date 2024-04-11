@@ -1,7 +1,7 @@
 import type { QwikIntrinsicElements } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
+import { CodeSnippet } from "../CodeSnippet/CodeSnippet";
 import { CopyButton } from "../CopyButton/CopyButton";
-import { Example } from "../Showcase/Showcase";
 
 export const components: Record<string, any> = {
   pre: component$<
@@ -14,7 +14,7 @@ export const components: Record<string, any> = {
         <pre class="mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 p-6 text-white dark:bg-zinc-900">
           <CopyButton
             class="absolute right-4 top-4 rounded p-1 text-white hover:bg-zinc-900"
-            value={__rawString__ || ""}
+            code={__rawString__ || ""}
           />
           <Slot />
         </pre>
@@ -28,5 +28,5 @@ export const components: Record<string, any> = {
       </code>
     );
   }),
-  Example,
+  CodeSnippet,
 };

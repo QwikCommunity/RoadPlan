@@ -34,6 +34,7 @@ export const StoreContext = createContextId<Store>("Store");
 export default component$(() => {
   const store = useStore<Store>({ theme: "light" });
   useContextProvider(StoreContext, store);
+  // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(() => {
     const theme = localStorage.getItem("theme") as Store["theme"];
     store.theme = theme;
