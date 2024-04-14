@@ -11,7 +11,7 @@ import { Highlight } from "../Highlight/Highlight";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const codeSnippets: any = import.meta.glob(`/src/**/snippets/*`, {
-  as: "raw",
+  query: "?raw",
   eager: isDev ? false : true,
 });
 
@@ -32,9 +32,10 @@ export const CodeSnippet = component$<CodeSnippetProps>(({ name }) => {
   const codeSnippetSig = useSignal<string>();
 
   useTask$(async () => {
-    codeSnippetSig.value = isDev
+    const code = isDev
       ? await codeSnippets[snippetPath]() // We need to call `await codeSnippets[snippetPath]()` in development as it is `eager:false`
       : codeSnippets[snippetPath]; // We need to directly access the `codeSnippets[snippetPath]` expression in preview/production as it is `eager:true`
+    codeSnippetSig.value = code.default;
   });
 
   return (
