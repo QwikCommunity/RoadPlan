@@ -1,7 +1,7 @@
 {
   "name": "@qwikdev/create-roadplan",
   "description": "Interactive CLI for create a Qwik documentation starter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "QwikDev",
   "license": "MIT",
   "homepage": "https://roadplan.pages.dev/",
