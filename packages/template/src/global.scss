@@ -6,6 +6,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   :root {
     --color-background: 0 0% 100%;
@@ -39,7 +43,6 @@
     --color-ring: 263 18% 61%;
 
     --border-radius: 0.375rem;
-
   }
 
   .dark {
@@ -75,7 +78,6 @@
     --color-ring: 263 26.8% 83.9%;
   }
 }
-
 
 /**
  * WHAT IS THIS FILE?
@@ -212,5 +214,4 @@ body {
   td[align="right"] {
     @apply text-right;
   }
-
 }
