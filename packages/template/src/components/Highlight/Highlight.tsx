@@ -1,12 +1,5 @@
 import type { ClassList, PropsOf } from "@builder.io/qwik";
-import {
-  $,
-  component$,
-  useSignal,
-  useTask$,
-  useVisibleTask$,
-} from "@builder.io/qwik";
-import { isDev } from "@builder.io/qwik/build";
+import { $, component$, useSignal, useTask$ } from "@builder.io/qwik";
 import { getHighlighterCore } from "shiki";
 import css from "shiki/langs/css.mjs";
 import html from "shiki/langs/html.mjs";
@@ -64,17 +57,7 @@ export const Highlight = component$(
 
     useTask$(async ({ track }) => {
       track(() => code);
-      if (!isDev) {
-        await addShiki$();
-      }
-    });
-
-    // eslint-disable-next-line qwik/no-use-visible-task
-    useVisibleTask$(async ({ track }) => {
-      track(() => code);
-      if (isDev) {
-        await addShiki$();
-      }
+      await addShiki$();
     });
 
     return (
