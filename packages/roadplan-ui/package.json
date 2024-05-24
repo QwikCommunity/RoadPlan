@@ -1,5 +1,5 @@
 {
-  "name": "my-qwik-library-name",
+  "name": "roadplan-ui",
   "version": "0.0.1",
   "description": "Create a reusable Qwik component library",
   "main": "./lib/index.qwik.mjs",
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@builder.io/qwik": "1.5.5",
+    "@builder.io/qwik-city": "^1.5.5",
     "@types/eslint": "^8.56.10",
     "@types/node": "^20.12.7",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
