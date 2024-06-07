@@ -1,6 +1,5 @@
 import type { QwikIntrinsicElements } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
-import { CodeSnippet } from "../CodeSnippet/CodeSnippet";
 import { CopyButton } from "../CopyButton/CopyButton";
 
 export const components: Record<string, any> = {
@@ -28,5 +27,4 @@ export const components: Record<string, any> = {
       </code>
     );
   }),
-  CodeSnippet,
 };

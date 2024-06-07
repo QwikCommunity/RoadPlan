@@ -24,7 +24,6 @@ export { ThemeDarkIcon } from "./Icons/ThemeDarkIcon";
 export { ThemeLightIcon } from "./Icons/ThemeLightIcon";
 
 // export user-components
-export { CodeSnippet } from "./user-components/CodeSnippet/CodeSnippet";
 export { CopyButton } from "./user-components/CopyButton/CopyButton";
 export { Highlight } from "./user-components/Highlight/Highlight";
 export { components } from "./user-components/MdxComponents/MdxComponents";
