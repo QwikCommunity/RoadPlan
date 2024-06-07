@@ -1,7 +1,8 @@
-import { defineConfig } from "vite";
-import pkg from "./package.json";
+import { qwikCity } from "@builder.io/qwik-city/vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
+import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import pkg from "./package.json";
 
 const { dependencies = {}, peerDependencies = {} } = pkg as any;
 const makeRegex = (dep) => new RegExp(`^${dep}(/.*)?$`);
@@ -25,6 +26,6 @@ export default defineConfig(() => {
         ],
       },
     },
-    plugins: [qwikVite(), tsconfigPaths()],
+    plugins: [qwikVite(), qwikCity(), tsconfigPaths()],
   };
 });

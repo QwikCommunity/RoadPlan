@@ -1,15 +1,22 @@
-import { Button } from "./components/Button/Button";
+import {
+  QwikCityProvider,
+  RouterOutlet,
+  ServiceWorkerRegister,
+} from "@builder.io/qwik-city";
 
 export default () => {
   return (
     <>
-      <head>
-        <meta charSet="utf-8" />
-        <title>Qwik Blank App</title>
-      </head>
-      <body>
-        <Button />
-      </body>
+      <QwikCityProvider>
+        <head>
+          <meta charSet="utf-8" />
+          <title>Qwik Blank App</title>
+        </head>
+        <body>
+          <RouterOutlet />
+          <ServiceWorkerRegister />
+        </body>
+      </QwikCityProvider>
     </>
   );
 };
